@@ -19,6 +19,12 @@ pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/Ap
 	Filter by IP Address
 	--ip=127.0.0.1
 
+	Filter by Timestamp greater than value
+	--tsgt=1234567890
+
+	Filter by Timestamp less than value
+	--tslt=1234567890
+
 ###Contributors
 
 Contributors are welcome.

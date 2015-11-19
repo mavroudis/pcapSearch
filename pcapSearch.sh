@@ -36,6 +36,12 @@ function use {
 	echo "  Filter by IP Address"
 	echo "    --ip=127.0.0.1"
 	echo ""
+	echo "  Filter by Timestamp greater than value"
+	echo "    --tsgt=1234567890"
+	echo ""
+	echo "  Filter by Timestamp less than value"
+	echo "    --tslt=1234567890"
+	echo ""
 	exit 1
 }
 
@@ -60,6 +66,14 @@ for opt in "$@"; do
 
 	if [ $optkey == '--ip' ]; then
 		cmd="$cmd(ip.addr==$optval)"
+	fi
+
+	if [ $optkey == '--tsgt' ]; then
+		cmd="$cmd(sip.Timestamp > $optval)"
+	fi
+
+	if [ $optkey == '--tslt' ]; then
+		cmd="$cmd(sip.Timestamp < $optval)"
 	fi
 
 done
