@@ -10,13 +10,13 @@ pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/Ap
 
 	./pcapSearch.sh file.pcap
 
-	Select a SRC Number
+	Filter by SRC Number
 	--src=8005551212
 
-	Select a DST Number
+	Filter by DST Number
  	--dst=8005551212
 
-	Select a IP Address
+	Filter by IP Address
 	--ip=127.0.0.1
 
 ###Contributors
