@@ -80,6 +80,8 @@ done
 
 if [ -e "$1" ]; then
 	`which tshark` -r $1 -Y "${cmd/)(/) and (}" -w `(date +"%s")`.pcap
+	# Older Versions
+	# `which tshark` -r $1 -R "${cmd/)(/) and (}" -w `(date +"%s")`.pcap
 else
 	use
 fi
