@@ -1,6 +1,6 @@
 ###About
 
-Simpe pcap search using tshark
+Simple pcap search using tshark
 
 ###Description
 
