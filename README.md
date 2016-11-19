@@ -1,6 +1,6 @@
 ###About
 
-Simple packet capture search filters for VoIP traffic analysis using tshark
+Simple packet capture search filters for VoIP traffic analysis
 
 ###Description
 
