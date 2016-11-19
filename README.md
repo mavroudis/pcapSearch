@@ -4,7 +4,7 @@ Simple pcap search using tshark
 
 ###Description
 
-pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html) a network protocol analyzer for simple filtering of previously saved capture files.
+pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html) a network protocol analyzer for simple filtering of previously saved capture files. It optionally displays the results in [Wireshark](https://www.wireshark.org/) or [sngrep](https://github.com/irontec/sngrep).
 
 ###Usage
 
@@ -19,11 +19,11 @@ pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/Ap
 	Filter by IP Address
 	--ip=127.0.0.1
 
-	Filter by Timestamp greater than value
-	--tsgt=1234567890
+	Open results in Wireshark
+	--ws
 
-	Filter by Timestamp less than value
-	--tslt=1234567890
+	Open results in sngrep
+	--sn
 
 ###Contributors
 
