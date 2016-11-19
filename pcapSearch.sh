@@ -69,11 +69,11 @@ for opt in "$@"; do
 	fi
 
 	if [ $optkey == '--ws' ]; then
-		out="`which wireshark` $pcap"
+		out="`which wireshark`"
 	fi
 
 	if [ $optkey == '--sn' ]; then
-		out="`which sngrep` -I $pcap"
+		out="`which sngrep` -I"
 	fi
 
 done
@@ -89,7 +89,7 @@ if [ -e "$1" ]; then
 		exit 1
 	fi
 	if [ -n "$out" ]; then
-		$out
+		$out $pcap
 		rm -f $pcap
 	fi
 else
