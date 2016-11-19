@@ -36,11 +36,11 @@ function use {
 	echo "  Filter by IP Address"
 	echo "    --ip=127.0.0.1"
 	echo ""
-	echo "  Filter by Timestamp greater than value"
-	echo "    --tsgt=1234567890"
+        echo "  Open results in Wireshark"
+        echo "    --ws"
 	echo ""
-	echo "  Filter by Timestamp less than value"
-	echo "    --tslt=1234567890"
+        echo "  Open results in sngrep"
+        echo "    --sn"
 	echo ""
 	exit 1
 }
@@ -68,20 +68,30 @@ for opt in "$@"; do
 		cmd="$cmd(ip.addr==$optval)"
 	fi
 
-	if [ $optkey == '--tsgt' ]; then
-		cmd="$cmd(sip.Timestamp > $optval)"
+	if [ $optkey == '--ws' ]; then
+		out="`which wireshark` $pcap"
 	fi
 
-	if [ $optkey == '--tslt' ]; then
-		cmd="$cmd(sip.Timestamp < $optval)"
+	if [ $optkey == '--sn' ]; then
+		out="`which sngrep` -I $pcap"
 	fi
 
 done
 
 if [ -e "$1" ]; then
+	pcap=`(date +"%s")`.pcap
 	`which tshark` -r $1 -Y "${cmd/)(/) and (}" -w `(date +"%s")`.pcap
 	# Older Versions
 	# `which tshark` -r $1 -R "${cmd/)(/) and (}" -w `(date +"%s")`.pcap
+	if [ "$(stat -c%s $pcap)" == "80" ]; then
+		rm -f $pcap
+		echo "Call(s) not found!"
+		exit 1
+	fi
+	if [ -n "$out" ]; then
+		$out
+		rm -f $pcap
+	fi
 else
 	use
 fi
