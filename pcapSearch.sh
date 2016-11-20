@@ -33,6 +33,9 @@ function use {
 	echo "  Filter by DST Number"
 	echo "    --dst=8005551212"
 	echo ""
+	echo "  Filter by User"
+	echo "    --usr=100"
+	echo ""
 	echo "  Filter by IP Address"
 	echo "    --ip=127.0.0.1"
 	echo ""
@@ -62,6 +65,10 @@ for opt in "$@"; do
 
 	if [ $optkey == '--dst' ]; then
 		cmd="$cmd(sip.To contains $optval)"
+	fi
+
+	if [ $optkey == '--usr' ]; then
+		cmd="$cmd(sip.Contact contains $optva and sip.auth)"
 	fi
 
 	if [ $optkey == '--ip' ]; then
