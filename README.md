@@ -16,6 +16,9 @@ pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/Ap
 	Filter by DST Number
  	--dst=8005551212
 
+	Filter by User
+	--usr=100
+
 	Filter by IP Address
 	--ip=127.0.0.1
 
