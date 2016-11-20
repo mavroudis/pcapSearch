@@ -88,8 +88,6 @@ done
 if [ -n "$cmd" ]; then
 	pcap=`(date +"%s")`.pcap
 	`which tshark` -r $1 -Y "${cmd//)(/) and (}" -w $pcap &>/dev/null
-	# Older Versions
-	# `which tshark` -r $1 -R "${cmd//)(/) and (}" -w $pcap &>/dev/null
 	if [ "$(stat -c%s $pcap)" == "80" ]; then
 		rm -f $pcap
 		echo "Call(s) not found!"
