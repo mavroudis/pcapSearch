@@ -47,7 +47,7 @@ function use {
 
 # OPTIONS CHECKS
 
-if [ $# -lt 2 ]; then
+if [ $# -lt 2 ] || [ ! -e $1 ]; then
 	use
 fi
 
