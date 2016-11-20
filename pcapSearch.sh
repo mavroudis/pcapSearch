@@ -68,7 +68,7 @@ for opt in "$@"; do
 	fi
 
 	if [ $optkey == '--usr' ]; then
-		cmd="$cmd(sip.Contact contains $optva and sip.auth)"
+		cmd="$cmd(sip.Contact contains $optval and sip.auth)"
 	fi
 
 	if [ $optkey == '--ip' ]; then
