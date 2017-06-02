@@ -1,12 +1,12 @@
-###About
+##About
 
 Simple packet capture search filters for VoIP traffic analysis
 
-###Description
+##Description
 
 pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html) a network protocol analyzer for simple filtering of previously saved capture files. It optionally displays the results in [Wireshark](https://www.wireshark.org/) or [sngrep](https://github.com/irontec/sngrep).
 
-###Usage
+##Usage
 
 	./pcapSearch.sh file.pcap
 
@@ -28,6 +28,6 @@ pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/Ap
 	Open results in sngrep
 	--sn
 
-###Contributors
+##Contributors
 
 Contributors are welcome.
