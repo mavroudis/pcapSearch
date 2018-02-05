@@ -36,6 +36,9 @@ function use {
 	echo "  Filter by User"
 	echo "    --usr=100"
 	echo ""
+	echo "  Filter by User Agent"
+	echo "    --ua=friendly-scanner"
+	echo ""
 	echo "  Filter by IP Address"
 	echo "    --ip=127.0.0.1"
 	echo ""
@@ -60,15 +63,19 @@ for opt in "$@"; do
 	optval=$(echo $opt | cut -f 2 -d '=')
 
 	if [ $optkey == '--src' ]; then
-		cmd="$cmd(sip.From contains $optval)"
+		cmd="$cmd(sip.From contains $optval || sip.pai.user contains $optval)"
 	fi
 
 	if [ $optkey == '--dst' ]; then
-		cmd="$cmd(sip.To contains $optval)"
+		cmd="$cmd(sip.to.user contains $optval)"
 	fi
 
 	if [ $optkey == '--usr' ]; then
 		cmd="$cmd(sip.contact.user==$optval)"
+	fi
+
+	if [ $optkey == '--ua' ]; then
+		cmd="$cmd(sip.User-Agent contains $optval)"
 	fi
 
 	if [ $optkey == '--ip' ]; then
