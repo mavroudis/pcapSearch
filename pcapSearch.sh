@@ -42,6 +42,9 @@ function use {
 	echo "  Filter by IP Address"
 	echo "    --ip=127.0.0.1"
 	echo ""
+	echo "  Filter by Call ID"
+	echo "    --id=M_mavroudisHT9rvTzA1SNGmuQVpg67HFp"
+	echo ""
         echo "  Open results in Wireshark"
         echo "    --ws"
 	echo ""
@@ -80,6 +83,10 @@ for opt in "$@"; do
 
 	if [ $optkey == '--ip' ]; then
 		cmd="$cmd(ip.addr==$optval)"
+	fi
+
+	if [ $optkey == '--id' ]; then
+		cmd="$cmd(sip.Call-ID==$optval)"
 	fi
 
 	if [ $optkey == '--ws' ]; then
