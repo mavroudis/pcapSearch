@@ -37,3 +37,7 @@ pcapSearch utilizes [TShark](https://www.wireshark.org/docs/wsug_html_chunked/Ap
 ## Contributors
 
 Contributors are welcome :+1:
+
+## Notice
+
+This script has been [superseded](https://github.com/voicetel/pcapSearch) by a golang libpcap implemetnation with additional features. 
